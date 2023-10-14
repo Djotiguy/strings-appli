@@ -2,7 +2,7 @@
 
 create table if not exists public.users(
     id bigserial primary key,
-    email citext not null,
+    username citext not null,
     password text,
     avatar text,
     is_admin boolean default false,
