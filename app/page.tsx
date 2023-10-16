@@ -7,7 +7,7 @@ export default function page() {
     <main className="flex min-h-screen items-center justify-center">
         <div className='flex flex-col gap-2 p-5 max-w-xs w-full bg-slate-800 rounded-lg'>
             <div>
-                <h1 className='text-center text-4xl my-4'>Strings</h1>
+                <h1 className='text-center text-4xl my-4'>Social Media</h1>
             </div>
             <div className='text-center'>
                 <Link
