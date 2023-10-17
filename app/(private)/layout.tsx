@@ -1,6 +1,10 @@
+"use client";
+import fetcher from "../api/util/fetcher"
 import Footer from "./footer"
 import Header from "./header"
 import NavBar from "./navbar"
+
+import { SWRConfig } from "swr"
 
 export default function PrivateLayout({
     children,
@@ -9,11 +13,13 @@ export default function PrivateLayout({
     children: React.ReactNode
 }) {
     return (
-        <div>
-            <Header />
-            <NavBar />
-            <main>{children}</main>
-            <Footer />
-        </div>
+        <SWRConfig value={{fetcher: fetcher}}>
+            <div>
+                <Header />
+                <NavBar />
+                <main>{children}</main>
+                <Footer />
+            </div>
+        </SWRConfig>
     )   
 }
