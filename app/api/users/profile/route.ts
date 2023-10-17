@@ -6,7 +6,7 @@ export async function GET(request: Request){
     // get currently logged in user
     const jwtPayLoad = await getJWTLoad();
     // fetch user data from database
-    const res = await sql("select id, username from users where id = $1",
+    const res = await sql("select id, username, avatar from users where id = $1",
     [jwtPayLoad.sub]);
 
     const user = res.rows[0];

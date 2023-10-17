@@ -5,7 +5,7 @@ import { SignJWT } from "jose";
 
 export async function POST(request: Request){
     const json = await request.json();
-    const res = await sql("select id, username, avatar from users where username ilike $1", 
+    const res = await sql("select id, username, password from users where username ilike $1", 
     [json.username]
     );
     if(res.rowCount == 0){
