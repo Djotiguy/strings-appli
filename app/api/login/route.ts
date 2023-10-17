@@ -5,7 +5,7 @@ import { SignJWT } from "jose";
 
 export async function POST(request: Request){
     const json = await request.json();
-    const res = await sql("select id, username, password from users where username ilike $1", 
+    const res = await sql("select id, username, avatar from users where username ilike $1", 
     [json.username]
     );
     if(res.rowCount == 0){
@@ -21,7 +21,7 @@ export async function POST(request: Request){
     .setSubject(user.id)
     .setIssuedAt()
     .setExpirationTime("2w")
-    .sign(new TextEncoder().encode("my-jwt-secret"));
+    .sign(new TextEncoder().encode(process.env.JWT_SECRET));
     const response = NextResponse.json({msg: "login successful"});
     response.cookies.set("jwt-token", token, {
         sameSite: "strict",
