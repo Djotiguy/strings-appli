@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { getJWTLoad } from "../../util/auth";
+import { getJWTPayLoad } from "../../util/auth";
 import { sql } from "@/db";
 
 export async function GET(request: Request){
     // get currently logged in user
-    const jwtPayLoad = await getJWTLoad();
+    const jwtPayLoad = await getJWTPayLoad();
     // fetch user data from database
     const res = await sql("select id, username, avatar from users where id = $1",
     [jwtPayLoad.sub]);

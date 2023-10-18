@@ -1,7 +1,7 @@
 import {cookies} from "next/headers";
 import {jwtVerify} from "jose";
 
-export async function getJWTLoad(){
+export async function getJWTPayLoad(){
     const cookieStore = cookies();
     const token = cookieStore.get("jwt-token");
     const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
