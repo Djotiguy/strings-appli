@@ -1,5 +1,6 @@
 "use client";
 import useSWR from "swr";
+import User from "../components/user";
 
 export default function Header() {
   const {data, error, isLoading} = useSWR('/api/users/profile');
@@ -9,6 +10,16 @@ export default function Header() {
   console.log(data);
   
   return (
-    <header>{data.data.username}</header>
+    <header className="flex flex-row w-full p-5 bg-slate-800 rounded-lg my-5 justify-between items-center">
+      <div>
+        <h1 className="font-mono text-lg" >Strings</h1>
+      </div>
+      <div>
+        <div>
+          <User user={data.data} href="account" />
+
+        </div>
+      </div>
+    </header>
   )
 }
