@@ -6,8 +6,6 @@ export default function Header() {
   const {data, error, isLoading} = useSWR('/api/users/profile');
   if (error) return <div>Failed to load </div>
   if (isLoading) return <div>Loading...</div>
-
-  console.log(data);
   
   return (
     <header className="flex flex-row w-full p-5 bg-slate-800 rounded-lg my-5 justify-between items-center">
