@@ -17,3 +17,4 @@ export default function PostContainer({username} : {username: string}) {
     </div>
   )
 }
+
