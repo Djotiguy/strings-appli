@@ -11,3 +11,21 @@ export async function GET(request: Request){
     const res = await sql('select * from follows where user_id = $1 and follower_id = $2', [userId, jwtPayload.sub]);
     return NextResponse.json({data : res.rows});
 }
+
+
+export async function POST(request: Request){
+    
+        const jwtPayload = await getJWTPayLoad();
+        const json = await request.json();
+        const res = await sql('select * from follows where user_id = $1 and follower_id = $2', 
+        [json.user_id, jwtPayload.sub]);
+
+        if(res.rows.length > 0){
+            return NextResponse.json({error : 'Already following'}, {status : 409});
+        }
+
+        const res2 = await sql('insert into follows (user_id, follower_id) values ($1, $2)',
+        [json.user_id, jwtPayload.sub]);
+
+        return NextResponse.json({msg : 'Followed successfully'});
+}
