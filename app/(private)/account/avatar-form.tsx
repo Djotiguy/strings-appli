@@ -7,8 +7,7 @@ export default function AvatarForm() {
     if(error) return <div>Error: {error.message}</div>
 
     const user = data.data;
-
-
+    
   return (
     <form>
         {user.avatar && (
