@@ -1,4 +1,5 @@
 import useSWR, { mutate } from "swr";
+import notFound from "../not-found";
 
 export default function UserPageHeader({ username }: { username: string }) {
   const {
@@ -18,6 +19,10 @@ export default function UserPageHeader({ username }: { username: string }) {
 
   const user = dataUser.data[0];
 
+  if(dataUser.data.length == 0) {
+    notFound();
+  }
+
   async function handleFollow() {
     const res = await fetch('/api/follows/', {
         method: 'post',
@@ -33,7 +38,6 @@ export default function UserPageHeader({ username }: { username: string }) {
   async function handleUnFollow() {
     const res = await fetch('/api/follows/' + user.id, {
         method: 'delete',
-        body: "",
     });
 
     if(res.ok){
@@ -41,7 +45,7 @@ export default function UserPageHeader({ username }: { username: string }) {
     }
   };
 
-  console.log(dataUser, dataFollow);
+
   return (
     <header className="w-full bg-slate-800 p-2 rounded-lg flex flex-row justify-between">
         <h1 className="text-lg font-bold">{username}</h1>
