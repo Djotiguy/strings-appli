@@ -1,7 +1,10 @@
 import { ChangeEvent, useState } from "react";
+import * as _ from "lodash";
 
 export default function SearchBar() {
     const [searchResults, setSearchResults] = useState("");
+
+    const debouncedSearch = _.debounce(fetcherSearchResults, 500);
 
     async function fetcherSearchResults(searchText: string){
         const res = await fetch("/api/search?q=" +searchText);
@@ -17,7 +20,7 @@ export default function SearchBar() {
 
     function  handleChange (e : ChangeEvent<HTMLInputElement>){
         console.log("Change", e.target.value);
-        fetcherSearchResults(e.target.value);
+        debouncedSearch(e.target.value);
     }
   return (
     <div>
