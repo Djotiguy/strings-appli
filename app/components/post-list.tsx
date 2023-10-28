@@ -5,10 +5,12 @@ import Post from './post';
 export default function PostList({
     index,
     username,
+    showEditBtn
 
 } : {
-    index: number,
-    username: string,
+    index: number;
+    username: string;
+    showEditBtn?: boolean;
 }) 
 
 {
@@ -23,7 +25,7 @@ export default function PostList({
         {data.data.map((post: PostI) => {
             return(
                 <li key={post.username}className='my-5'>
-                    <Post post={post} />
+                    <Post post={post} showEditBtn={showEditBtn} />
                 </li>
             )
         })}
