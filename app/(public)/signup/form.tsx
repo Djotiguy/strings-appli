@@ -21,7 +21,7 @@ function Form(){
         }
 
       const res = await fetch("/api/signup", {
-        method: "post",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
