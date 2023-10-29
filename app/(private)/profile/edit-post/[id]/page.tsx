@@ -13,7 +13,7 @@ export default function EditPost({params} : {params: {id: number}}){
             <h2>Edit post</h2>
             <div className="flex flex-col gap-10">
                 <Form post={data.data} />
-                <DeleteBtn />
+                <DeleteBtn post={data.data} />
             </div>
         </div>
     )
