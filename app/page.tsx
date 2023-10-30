@@ -11,12 +11,12 @@ export default function page() {
             </div>
             <div className='text-center'>
                 <Link
-                className='bg-slate-900 my-4 p-3 rounded-lg block' 
+                className='bg-slate-900 text-white my-4 p-3 rounded-lg block' 
                 href="/signin"> Sign in </Link>
             </div>
             <div className='text-center'>
                 <Link
-                className='bg-slate-900 my-4 p-3 rounded-lg block'  
+                className='bg-slate-900 text-white my-4 p-3 rounded-lg block'  
                 href="signup"> Sign up </Link>
             </div>
         </div>
