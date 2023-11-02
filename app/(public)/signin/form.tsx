@@ -26,7 +26,7 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 p-5 max-w-xs w-full bg-slate-800 rounded-lg"
+      className="flex flex-col gap-2 p-5 max-w-xs w-full dark:bg-slate-800 bg-slate-300 rounded-lg"
     >
       <div className="text-center">
         <h3 className="font-semibold">Sign in</h3>
@@ -60,7 +60,7 @@ export default function Form() {
           required
         />
       </div>
-      <button type="submit" className="mt-4 bg-slate-900 text-white p-3 rounded-lg">Sign In</button>
+      <button type="submit" className="mt-4 dark:bg-slate-900 bg-slate-400 text-white p-3 rounded-lg">Sign In</button>
     </form>
   );
 }

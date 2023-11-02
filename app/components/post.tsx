@@ -50,7 +50,7 @@ export default function Post({
         </div>
 
         <div>{createdAt}</div>
-        <div className="text-slate-400">{post.content}</div>
+        <div className="text-slate-600">{post.content}</div>
       </div>
       {showEditBtn && (
       <div className="text-right flex-grow">

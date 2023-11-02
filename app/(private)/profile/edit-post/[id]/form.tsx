@@ -21,12 +21,12 @@ export default function Form({ post }: { post: PostI }) {
   return (
     <form onSubmit={handleSubmit}>
       <textarea
-        className="bg-gray-700 p-2 rounded-lg w-full"
+        className="bg-white text-black p-2 rounded-lg w-full"
         placeholder="What is happening"
         onChange={(e) => setContent(e.target.value)}
         value={content}
       />
-      <button type="submit" className="bg-slate-900 rounded-lg p-2">Update post</button>
+      <button type="submit" className="dark:bg-slate-900 bg-slate-400 rounded-lg p-2">Update post</button>
     </form>
   );
 }
