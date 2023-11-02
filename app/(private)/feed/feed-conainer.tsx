@@ -12,7 +12,7 @@ export default function FeedContainer() {
     <div>
         {pages}
         <div className='flex justify-center'>
-            <button className='dark:bg-slate-900 bg-slate-400 p-2 rounded-lg self-center' onClick={() => setCnt(cnt + 1)}>Load More</button>
+            <button type='submit' className='dark:bg-slate-900 bg-slate-400 p-2 rounded-lg self-center' onClick={() => setCnt(cnt + 1)}>Load More</button>
         </div>
     </div>
   )

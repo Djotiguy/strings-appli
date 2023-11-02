@@ -50,10 +50,10 @@ export default function UserPageHeader({ username }: { username: string }) {
     <header className="w-full dark:bg-slate-800 bg-slate-300 p-2 rounded-lg flex flex-row justify-between">
         <h1 className="text-lg font-bold">{username}</h1>
         {dataFollow.data.length > 0 && (
-            <button onClick={handleUnFollow} className="dark:bg-slate-900 bg-slate-400 rounded-lg p-2">Unfollow</button>
+            <button type="submit" onClick={handleUnFollow} className="dark:bg-slate-900 bg-slate-400 rounded-lg p-2">Unfollow</button>
         )} 
         {dataFollow.data.length == 0 && (
-            <button onClick={handleFollow} className="dark:bg-slate-900 bg-slate-400 rounded-lg p-2">Follow</button>
+            <button type="submit" onClick={handleFollow} className="dark:bg-slate-900 bg-slate-400 rounded-lg p-2">Follow</button>
         )}
     </header>
   );
